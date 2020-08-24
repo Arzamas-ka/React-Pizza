@@ -87,3 +87,18 @@ export const CategoriesData = [
     name: 'Закрытые',
   },
 ];
+
+export const SortsData = [
+  {
+    id: 0,
+    name: 'популярности',
+  },
+  {
+    id: 1,
+    name: 'цене',
+  },
+  {
+    id: 2,
+    name: 'алфавиту',
+  },
+];

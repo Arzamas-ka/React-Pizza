@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const ArrowTop = () => {
+export const ArrowTop = ({ rotateArrow }) => {
   return (
     <svg
+      className={rotateArrow}
       width='10'
       height='6'
       viewBox='0 0 10 6'
