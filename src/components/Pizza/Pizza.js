@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Plus } from '../../helpers/svg';
 import { Type } from '../../components';
 
@@ -26,6 +27,10 @@ export const Pizza = ({ pizzas }) => {
       ))}
     </>
   );
+};
+
+Pizza.propTypes = {
+  pizzas: PropTypes.array.isRequired,
 };
 
 export default Pizza;

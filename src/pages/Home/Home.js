@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Categories, Sort, Pizza } from '../../components';
 
 const Home = ({ pizzas }) => {
-
   return (
     <div className='container'>
       <div className='content__top'>
@@ -16,5 +16,11 @@ const Home = ({ pizzas }) => {
     </div>
   );
 };
+
+Home.propTypes = {
+  pizzas: PropTypes.array,
+};
+
+Home.defaultProps = { types: [] };
 
 export default Home;

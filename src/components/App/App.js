@@ -8,9 +8,9 @@ const App = () => {
   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/pizzas.json')
+    axios
+      .get('http://localhost:3000/pizzas.json')
       .then((response) => {
-        console.log(response.data.pizzas);
         setPizzas(response.data.pizzas);
       })
       .catch((error) => console.log(error));

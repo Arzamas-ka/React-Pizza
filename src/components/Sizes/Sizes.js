@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SizesPizza } from '../../helpers/data';
 
@@ -20,11 +21,15 @@ const Sizes = ({ sizes }) => {
           })}
           onClick={() => handleActiveType(index)}
         >
-          {size}
+          {`${size} см.`}
         </li>
       ))}
     </>
   );
+};
+
+Sizes.propTypes = {
+  sizes: PropTypes.array,
 };
 
 export default Sizes;

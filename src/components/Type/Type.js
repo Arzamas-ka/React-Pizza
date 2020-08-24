@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Sizes } from '../../components';
 import { Types } from '../../helpers/data';
@@ -31,6 +32,11 @@ const Type = ({ sizes, types }) => {
       </ul>
     </div>
   );
+};
+
+Type.propTypes = {
+  sizes: PropTypes.array,
+  types: PropTypes.array,
 };
 
 export default Type;
