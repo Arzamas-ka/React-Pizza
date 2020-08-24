@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header/Header';
+import { Header } from '../../components';
 import { Sort } from '../../components';
 import { Categories } from '../../components';
 import { Pizza } from '../../components';
