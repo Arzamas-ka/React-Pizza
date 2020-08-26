@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { CategoriesData } from '../../helpers/data';
 
-const Categories = () => {
+const Categories = ({ onClickItem }) => {
   const [active, setActive] = useState(null);
 
   const onActiveItem = (index) => {
     setActive(index);
+    onClickItem(index);
   };
 
   return (

@@ -1,6 +1,8 @@
-import SET_PIZZAS from './const';
+import { SET_PIZZAS } from './const';
 
-const setPizzas = (items) => ({
+const setPizzasAction = (items) => ({
   type: SET_PIZZAS,
   payload: items,
 });
+
+export default setPizzasAction;
