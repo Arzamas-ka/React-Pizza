@@ -13,7 +13,6 @@ const Sort = ({ onSelectSortType, activeSortType }) => {
   };
 
   const onActiveItem = (index) => {
-    console.log(index);
     onSelectSortType(index);
     setVisiblePopup(false);
     activeIndex.current = index;
