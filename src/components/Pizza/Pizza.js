@@ -13,7 +13,7 @@ export const Pizza = ({ pizzas }) => {
             src={pizza.imageUrl}
             alt='Pizza'
           />
-          <h4 className='pizza-block__title'>{pizza.title}</h4>
+          <h4 className='pizza-block__title'>{pizza.name}</h4>
           <Type sizes={pizza.sizes} types={pizza.types} />
           <div className='pizza-block__bottom'>
             <div className='pizza-block__price'>{`от ${pizza.price} ₽`}</div>

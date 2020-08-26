@@ -1,25 +1,19 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { Header } from '../../components';
 import { Home, Cart } from '../../pages';
-import setPizzasAction from '../../redux/actions/pizzasAction';
 
 const App = () => {
   // const [pizzas, setPizzas] = useState([]);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    axios
-      .get('http://localhost:3000/pizzas.json')
-      .then(({ data }) => {
-        // setPizzas(response.data.pizzas); - обычный хук
-        dispatch(setPizzasAction(data.pizzas));
-      })
-      .catch((error) => console.log(error));
-  }, [dispatch]);
+  // useEffect(() => {
+  // axios
+  // .get('http://localhost:3001/pizzas')
+  // .then(({ data }) => {
+  //   // setPizzas(response.data.pizzas); - обычный хук
+  // })
+  // .catch((error) => console.log(error));
+  // }, []);
 
   return (
     <div className='wrapper'>

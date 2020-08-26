@@ -1,4 +1,4 @@
-import { SET_PIZZAS } from '../actions/const';
+import { SET_PIZZAS, SET_LOADED } from '../actions/const';
 
 const initialState = {
   items: [],
@@ -11,7 +11,12 @@ const pizzasReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
-        isLoaded: true
+        isLoaded: true,
+      };
+    case SET_LOADED:
+      return {
+        ...state,
+        isLoaded: action.payload,
       };
     default:
       return state;

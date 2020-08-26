@@ -1,16 +1,19 @@
-import { SET_SORT_BY } from '../actions/const';
+import { SET_CATEGORY_BY } from '../actions/const';
 
 const initialState = {
-  category: 0,
-  sortBy: 'popular',
+  category: null,
+  sortBy: {
+    type: 'popular',
+    order: 'desc',
+  },
 };
 
 const filtersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_SORT_BY:
+    case SET_CATEGORY_BY:
       return {
         ...state,
-        sortBy: action.payload,
+        category: action.payload,
       };
     default:
       return state;

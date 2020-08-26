@@ -10,23 +10,23 @@
 
 export const CategoriesData = [
   {
-    id: 1,
+    id: 0,
     name: 'Мясные',
   },
   {
-    id: 2,
+    id: 1,
     name: 'Вегетарианская',
   },
   {
-    id: 3,
+    id: 2,
     name: 'Гриль',
   },
   {
-    id: 4,
+    id: 3,
     name: 'Острые',
   },
   {
-    id: 5,
+    id: 4,
     name: 'Закрытые',
   },
 ];

@@ -2,19 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowTop } from '../../helpers/svg';
 import { SortsData } from '../../helpers/data';
 
-const Sort = () => {
+const Sort = ({ onSelectSortType, activeSortType }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [active, setActive] = useState(0);
   const sortRef = useRef(null);
-  const activeLabel = SortsData[active].name;
+  const activeIndex = useRef(0);
+  const activeLabel = SortsData[activeIndex.current].name;
 
   const onVisiblePopup = () => {
     setVisiblePopup((visiblePopup) => !visiblePopup);
   };
 
-  const onActiveItem = (id) => {
-    setActive(id);
+  const onActiveItem = (index) => {
+    console.log(index);
+    onSelectSortType(index);
     setVisiblePopup(false);
+    activeIndex.current = index;
   };
 
   const handleOutsideClick = (event) => {
@@ -42,7 +44,7 @@ const Sort = () => {
             {SortsData.map((item) => (
               <li
                 key={item.id}
-                className={active === item.id ? 'active' : ''}
+                className={activeSortType === item.id ? 'active' : ''}
                 onClick={() => onActiveItem(item.id)}
               >
                 {item.name}
