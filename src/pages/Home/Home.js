@@ -38,7 +38,10 @@ const Home = () => {
           activeCategory={category}
           onSelectCategory={onSelectCategory}
         />
-        <Sort activeSortType={sortBy} onSelectSortType={onSelectSortType} />
+        <Sort
+          activeSortType={sortBy.type}
+          onSelectSortType={onSelectSortType}
+        />
       </div>
       <h2 className='content__title'>Все пиццы</h2>
       <div className='content__items'>

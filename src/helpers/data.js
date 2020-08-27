@@ -36,16 +36,19 @@ export const SortsData = [
     id: 0,
     name: 'популярности',
     type: 'popular',
+    order: 'desc',
   },
   {
     id: 1,
     name: 'цене',
     type: 'price',
+    order: 'desc',
   },
   {
     id: 2,
     name: 'алфавиту',
-    type: 'alphabet',
+    type: 'name',
+    order: 'asc',
   },
 ];
 

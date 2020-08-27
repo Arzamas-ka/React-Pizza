@@ -5,8 +5,8 @@ import { SortsData } from '../../helpers/data';
 const Sort = ({ onSelectSortType, activeSortType }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const sortRef = useRef(null);
-  const activeIndex = useRef(0);
-  const activeLabel = SortsData[activeIndex.current].name;
+  const activeLabel = SortsData.find((elem) => elem.type === activeSortType)
+    .name;
 
   const onVisiblePopup = () => {
     setVisiblePopup((visiblePopup) => !visiblePopup);
@@ -15,7 +15,6 @@ const Sort = ({ onSelectSortType, activeSortType }) => {
   const onActiveItem = (index) => {
     onSelectSortType(index);
     setVisiblePopup(false);
-    activeIndex.current = index;
   };
 
   const handleOutsideClick = (event) => {
@@ -43,8 +42,8 @@ const Sort = ({ onSelectSortType, activeSortType }) => {
             {SortsData.map((item) => (
               <li
                 key={item.id}
-                className={activeSortType === item.id ? 'active' : ''}
-                onClick={() => onActiveItem(item.id)}
+                className={activeSortType === item.type ? 'active' : ''}
+                onClick={() => onActiveItem(item)}
               >
                 {item.name}
               </li>
