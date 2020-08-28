@@ -6,7 +6,7 @@ export const setLoaded = (value) => ({
   payload: value,
 });
 
-// этот action асинхронный так как он использует thunk
+// этот action async так как он использует thunk
 export const fetchPizzas = (sortBy, category) => (dispatch) => {
   dispatch(setLoaded(false));
   axios
