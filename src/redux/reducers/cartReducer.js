@@ -1,8 +1,4 @@
-import {
-  SET_TOTAL_PRICE,
-  SET_TOTAL_COUNT,
-  ADD_PIZZA_CART,
-} from '../actions/const';
+import { ADD_PIZZA_CART } from '../actions/const';
 
 const initialState = {
   items: {},
@@ -10,31 +6,50 @@ const initialState = {
   totalCount: 0,
 };
 
+const getTotalPrice = (arr) => arr.reduce((sum, obj) => obj.price + sum, 0); 
+
+const _get = (obj, path) => {
+  const [firstKey, ...keys] = path.split('.');
+  return keys.reduce((val, key) => {
+    return val[key];
+  }, obj[firstKey]);
+};
+
+const getTotalSum = (obj, path) => {
+  return Object.values(obj).reduce((sum, obj) => {
+    const value = _get(obj, path);
+    return sum + value;
+  }, 0);
+};
+
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_TOTAL_PRICE:
-      return {
-        ...state,
-        totalPrice: action.payload,
-      };
-    case SET_TOTAL_COUNT:
-      return {
-        ...state,
-        totalCount: action.payload,
-      };
-    case ADD_PIZZA_CART:
-      return {
-        ...state,
-        items: {
-          [action.payload.id]: [
-            ...state.items[action.payload.id],
-            action.payload,
-          ],
+    case ADD_PIZZA_CART: {
+      const currentPizzaItems = !state.items[action.payload.id]
+        ? [action.payload]
+        : [...state.items[action.payload.id].items, action.payload];
+
+      const newItems = {
+        ...state.items,
+        [action.payload.id]: {
+          items: currentPizzaItems,
+          totalPrice: getTotalPrice(currentPizzaItems),
         },
       };
+
+      const totalCount = getTotalSum(newItems, 'items.length');
+      const totalPrice = getTotalSum(newItems, 'totalPrice');
+
+      return {
+        ...state,
+        items: newItems,
+        totalCount,
+        totalPrice,
+      };
+    }
     default:
       return state;
   }
-}; 
+};
 
 export default cartReducer;

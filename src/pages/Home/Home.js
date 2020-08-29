@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Categories, Sort, PizzaList } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,6 +6,7 @@ import { setCategory, setSortBy } from '../../redux/actions/filtersAction';
 import { fetchPizzas } from '../../redux/actions/pizzasAction';
 import LoadingBlock from '../../components/Loading/Loading';
 import { SortsData, CategoriesData } from '../../helpers/data';
+import { ADD_PIZZA_CART } from '../../redux/actions/const';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,14 +19,14 @@ const Home = () => {
     dispatch(fetchPizzas(sortBy, category));
   }, [category, dispatch, sortBy]);
 
-  const onSelectCategory = React.useCallback(
+  const onSelectCategory = useCallback(
     (index) => {
       dispatch(setCategory(index));
     },
     [dispatch],
   );
 
-  const onSelectSortType = React.useCallback(
+  const onSelectSortType = useCallback(
     (type) => {
       dispatch(setSortBy(type));
     },
@@ -34,7 +35,7 @@ const Home = () => {
 
   const handleAddPizzaToCart = (obj) => {
     dispatch({
-      type: 'ADD_PIZZA_CART',
+      type: ADD_PIZZA_CART,
       payload: obj,
     });
   };
@@ -58,9 +59,9 @@ const Home = () => {
         {isLoaded
           ? items.map((obj) => (
               <PizzaList
-                onClickAddPizza={handleAddPizzaToCart}
                 key={obj.id}
-                addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
+                onClickAddPizza={handleAddPizzaToCart}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
                 {...obj}
               />
             ))
