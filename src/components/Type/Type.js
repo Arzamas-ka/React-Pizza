@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Sizes } from '../../components';
 import { Types } from '../../helpers/data';
 
-const Type = ({ sizes, types }) => {
-  const [activeType, setActiveType] = useState(types[0]);
+const Type = ({
+  sizes,
+  types,
+  activeType,
+  setActiveType,
+  activeSize,
+  setActiveSize,
+}) => {
+  // const [activeType, setActiveType] = useState(types[0]);
 
   const handleActiveType = (index) => {
     setActiveType(index);
@@ -28,7 +35,11 @@ const Type = ({ sizes, types }) => {
         ))}
       </ul>
       <ul>
-        <Sizes sizes={sizes} />
+        <Sizes
+          sizes={sizes}
+          activeSize={activeSize}
+          setActiveSize={setActiveSize}
+        />
       </ul>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Cart as CartImg, Trash, GoBack } from '../../helpers/svg';
 import { Button } from '../../components';
-import { Link } from 'react-router-dom';
 import emptyCartImg from '../../assets/images/empty-cart.png';
 
 const Cart = () => {
@@ -35,7 +35,6 @@ const Cart = () => {
                 className='button button--outline button--add go-back-btn'
               >
                 <GoBack />
-
                 <span>Вернуться назад</span>
               </Link>
               <Button className='pay-btn'>

@@ -53,7 +53,7 @@ export const SortsData = [
 ];
 
 export const Types = ['тонкое', 'традиционное'];
-export const SizesPizza = [26, 30, 40];
+export const PizzaSizes = [26, 30, 40];
 
 // export const PizzaData = [
 //   {

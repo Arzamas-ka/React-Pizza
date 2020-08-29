@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SizesPizza } from '../../helpers/data';
+import { PizzaSizes } from '../../helpers/data';
 
-const Sizes = ({ sizes }) => {
-  const [activeSize, setActiveSize] = useState(sizes[0]);
+const Sizes = ({ sizes, activeSize, setActiveSize }) => {
+  // const [activeSize, setActiveSize] = useState(sizes[0]);
 
   const handleActiveType = (index) => {
     setActiveSize(index);
@@ -12,7 +12,7 @@ const Sizes = ({ sizes }) => {
 
   return (
     <>
-      {SizesPizza.map((size, index) => (
+      {PizzaSizes.map((size, index) => (
         <li
           key={size}
           className={classNames({
