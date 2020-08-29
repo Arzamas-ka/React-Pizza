@@ -78,7 +78,7 @@ export const PizzaList = ({
         <div className='pizza-block__price'>от {price} ₽</div>
         <Button onClick={onAddPizza} className='button--add' outline>
           <Plus />
-          <span>Добавить</span>
+          <span>Добавить </span>
           {addedCount && <span>{addedCount}</span>}
         </Button>
       </div>

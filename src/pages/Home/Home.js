@@ -19,7 +19,7 @@ const Home = () => {
     dispatch(fetchPizzas(sortBy, category));
   }, [category, dispatch, sortBy]);
 
-  const onSelectCategory = useCallback(
+  const onClickCategory = useCallback(
     (index) => {
       dispatch(setCategory(index));
     },
@@ -45,7 +45,7 @@ const Home = () => {
       <div className='content__top'>
         <Categories
           activeCategory={category}
-          onClickCategory={onSelectCategory}
+          onClickCategory={onClickCategory}
           items={CategoriesData}
         />
         <Sort
@@ -61,7 +61,7 @@ const Home = () => {
               <PizzaList
                 key={obj.id}
                 onClickAddPizza={handleAddPizzaToCart}
-                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
                 {...obj}
               />
             ))
