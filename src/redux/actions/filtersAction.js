@@ -1,4 +1,4 @@
-import  { SET_SORT_BY, SET_CATEGORY_BY } from '../actions/const';
+import { SET_SORT_BY, SET_CATEGORY_BY } from '../actions/const';
 
 export const setSortBy = ({ type, order }) => ({
   type: SET_SORT_BY,

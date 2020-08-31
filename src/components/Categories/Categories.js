@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+
 import { CategoriesData } from '../../helpers/data';
 
 const Categories = ({ activeCategory, onClickCategory }) => {

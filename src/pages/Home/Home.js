@@ -1,7 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import { Categories, Sort, PizzaList } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { Categories, Sort, PizzaList } from '../../components';
 import { setCategory, setSortBy } from '../../redux/actions/filtersAction';
 import { fetchPizzas } from '../../redux/actions/pizzasAction';
 import LoadingBlock from '../../components/Loading/Loading';

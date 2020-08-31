@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { Cart as CartImg, Trash, GoBack } from '../../helpers/svg';
 import { Button } from '../../components';
 import emptyCartImg from '../../assets/images/empty-cart.png';
 import CartItem from '../../components/CartItem/CartItem';
-import { useSelector, useDispatch } from 'react-redux';
 import {
   clearCart,
   removeCartItem,

@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import filtersReducer from '../reducers/filtersReducer';
 import pizzasReducer from '../reducers/pizzasReducer';
 import cartReducer from './cartReducer';

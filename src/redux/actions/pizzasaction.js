@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { SET_PIZZAS, SET_LOADED } from './const';
 
 export const setLoaded = (value) => ({

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import { Plus } from '../../helpers/svg';
 import Button from '../Button/Button';
-import classNames from 'classnames';
 
 export const PizzaList = ({
   id,
